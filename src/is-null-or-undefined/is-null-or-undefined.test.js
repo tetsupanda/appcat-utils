@@ -7,11 +7,16 @@ describe('isNullOrUndefined(...)', () => {
     [false, ''],
   ];
 
-  cases.forEach(([expected, input]) => {
+
+  for (let i = 0; i < cases.length; i++) { 
+    const expected = cases[i][0];
+    const input = cases[i][1];
+
     it(`returns ${expected} when given: ${input}`, () => {
       const result = isNullOrUndefined(input);
 
       expect(result).toEqual(expected)
     })
-  })
+
+  }
 })
